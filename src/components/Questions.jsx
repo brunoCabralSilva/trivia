@@ -178,7 +178,7 @@ class Questions extends React.Component {
           type="button"
           data-testid="btn-next"
           onClick={ this.handleClick }
-          className="px-4 py-3 bg-test sm:w-2/3 sm:mx-auto m-2 rounded font-bold shadow-2xl mt-10 text-white border-2 border-white"
+          className="px-4 py-3 bg-test sm:w-2/3 sm:mx-auto m-2 rounded font-bold shadow-2xl mt-6 text-white border-2 border-white"
           >
             Next
           </button>
