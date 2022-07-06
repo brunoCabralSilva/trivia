@@ -8,7 +8,7 @@ import Feedback from './pages/Feedback';
 
 export default function App() {
   return (
-    <div>
+    <div className="">
       <Switch>
         <Route exact path="/" component={ Login } />
         <Route exact path="/trivia" component={ Game } />

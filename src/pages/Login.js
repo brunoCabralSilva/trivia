@@ -54,7 +54,7 @@ class Login extends React.Component {
     const { name, email, apiDataJson } = this.state;
     console.log(apiDataJson);
     return (
-      <div>
+      <div className="">
         <input
           type="text"
           name="name"
