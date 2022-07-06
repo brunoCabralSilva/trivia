@@ -56,10 +56,10 @@ class Login extends React.Component {
     return (
       <div className="flex flex-col bg-lilas sm:bg-lilas text-white h-screen justify-center items-center">
         <div className="flex flex-col bg-black rounded-lg gap-1 w-1/2 sm:w-1/4">
-          <img className='rounded-lg my-7' src={require('../img/logo.png')} />
+          <img className='rounded-lg my-7' src={require('../img/logo.png')} alt="" />
           <div className='w-10/12 mx-auto'> 
         <input
-          className=' w-full rounded p-1 mb-1 bg-purple-200'
+          className=' w-full text-center rounded p-1 mb-1 bg-purple-200'
           type="text"
           name="name"
           value={ name }
@@ -67,7 +67,7 @@ class Login extends React.Component {
           onChange={ this.handleChange }
           />
         <input
-          className='w-full rounded p-1 mb-2 bg-purple-200'
+          className='w-full text-center rounded p-1 mb-2 bg-purple-200'
           type="email"
           name="email"
           value={ email }

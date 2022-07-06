@@ -4,9 +4,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    minHeight: {
+      '80vh': '85vh',
+    },
     extend: {
       colors: {
-        'lilas': '#B53DC4'
+        'lilas': '#B53DC4',
+        'half-transparent': 'rgb(181,61,196,0.4)',
       },
       spacing: {
         'great': '22rem',

@@ -8,6 +8,7 @@ class Trivia extends React.Component {
     const { history } = this.props;
     return (
       <div>
+        {/* <img src={require('../img/purple.jpg')} alt="" className="" /> */}
         <Header />
         Trivia
         <Questions

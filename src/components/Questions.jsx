@@ -163,10 +163,10 @@ class Questions extends React.Component {
   render() {
     const { category, questions, correct, incorrect, timer, click } = this.state;
     return (
-      <section className='flex flex-col justify-center items-center bg-gray-400 m-4 h-80vh'>
-        <h1 className='text-5xl m-4'>Questions</h1>
+      <section className='flex flex-col justify-center items-center bg-half-transparent m-4 min-h-80vh z-20'>
+        <h1 className='text-5xl m-4 text-white'>Questions</h1>
         <h2 className='mt-4' data-testid="question-category">{category}</h2>
-        <p className='w-11/12 text-center mb-4 text-2xl' data-testid="question-text">{questions}</p>
+        <p className='w-11/12 text-center mb-4 text-2xl text-white' data-testid="question-text">{questions}</p>
         <div className='w-11/12 flex flex-col justify-center' data-testid="answer-options">
           {this.random(incorrect, correct)}
         </div>
