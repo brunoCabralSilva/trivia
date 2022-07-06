@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/trybe-19-trivia/static/css/main.24a31f68.css",
-    "main.js": "/trybe-19-trivia/static/js/main.59d1789f.js",
+    "main.js": "/trybe-19-trivia/static/js/main.cf9fac27.js",
     "static/media/logo.png": "/trybe-19-trivia/static/media/logo.90e276cb6942b035f550.png",
     "static/media/ok.jpg": "/trybe-19-trivia/static/media/ok.c9c1d263ae1bdecb007f.jpg",
     "static/media/purple.jpg": "/trybe-19-trivia/static/media/purple.103777026c5765234c55.jpg",
     "index.html": "/trybe-19-trivia/index.html",
     "main.24a31f68.css.map": "/trybe-19-trivia/static/css/main.24a31f68.css.map",
-    "main.59d1789f.js.map": "/trybe-19-trivia/static/js/main.59d1789f.js.map"
+    "main.cf9fac27.js.map": "/trybe-19-trivia/static/js/main.cf9fac27.js.map"
   },
   "entrypoints": [
     "static/css/main.24a31f68.css",
-    "static/js/main.59d1789f.js"
+    "static/js/main.cf9fac27.js"
   ]
 }
