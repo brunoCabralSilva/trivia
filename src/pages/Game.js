@@ -9,7 +9,6 @@ class Game extends React.Component {
     return (
       <div>
         <Header />
-        Trivia
         <Questions
           history={ history }
         />

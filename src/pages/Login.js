@@ -54,36 +54,47 @@ class Login extends React.Component {
     const { name, email, apiDataJson } = this.state;
     console.log(apiDataJson);
     return (
-      <div className="">
+      <div className="flex flex-col bg-lilas sm:bg-lilas text-white h-screen justify-center items-center">
+        <div className="flex flex-col bg-black rounded-lg gap-1 w-1/2 sm:w-1/4">
+          <img className='rounded-lg my-7' src={require('../img/logo.png')} />
+          <div className='w-10/12 mx-auto'> 
         <input
+          className=' w-full rounded p-1 mb-1 bg-purple-200'
           type="text"
           name="name"
           value={ name }
           data-testid="input-player-name"
           onChange={ this.handleChange }
-        />
+          />
         <input
+          className='w-full rounded p-1 mb-2 bg-purple-200'
           type="email"
           name="email"
           value={ email }
           data-testid="input-gravatar-email"
           onChange={ this.handleChange }
         />
+        <div className='flex flex-row w-full gap-x-1 mb-4'>
         <button
-          type="button"
-          onClick={ this.handleClick }
-          data-testid="btn-play"
-          disabled={ this.enable() }
+        className="bg-lilas font-bold hover:bg-purple-900 transition duration-1000 py-1 w-1/2 rounded mb-1"
+        type="button"
+        onClick={ this.handleClick }
+        data-testid="btn-play"
+        disabled={ this.enable() }
         >
           Play
         </button>
         <button
-          type="button"
+        className="bg-lilas font-bold hover:bg-purple-900 transition duration-1000 py-1 w-1/2 rounded mb-1"
+        type="button"
           data-testid="btn-settings"
           onClick={ this.toSettings }
-        >
-          Configurações
+          >
+          Settings
         </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

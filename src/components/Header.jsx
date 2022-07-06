@@ -6,10 +6,12 @@ class Header extends React.Component {
   render() {
     const { name, token, score } = this.props;
     return (
-      <div>
-        <img src={ `https://www.gravatar.com/avatar/${token}` } alt="" data-testid="header-profile-picture" />
+      <div className='flex items-center justify-between flex-row m-4'>
+        <img className='rounded-full' src={ `https://www.gravatar.com/avatar/${token}` } alt="" data-testid="header-profile-picture" />
+        <div className='flex flex-col items-end '>
         <p data-testid="header-player-name">{ name }</p>
-        <span data-testid="header-score">{ Number(score) }</span>
+        <span data-testid="header-score">Score:{ Number(score) }</span>
+        </div>
       </div>
     );
   }

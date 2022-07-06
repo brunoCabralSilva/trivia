@@ -91,7 +91,7 @@ class Questions extends React.Component {
         key={ index }
         name={ alternative }
         data-testid={ `wrong-answer-${index}` }
-        className={ click ? 'incorrect' : '' }
+        className={ `px-4 py-2 bg-purple-200 m-2 rounded min-w-1/2 font-bold shadow-2xl ${click ? 'border-2 border-red-500 bg-red-500 text-white' : ''}` }
         onClick={ () => this.check('incorrect') }
         disabled={ disable }
       >
@@ -103,7 +103,7 @@ class Questions extends React.Component {
         type="button"
         name={ correto }
         data-testid="correct-answer"
-        className={ click ? 'correct' : '' }
+        className={ `px-4 py-2 bg-purple-200 m-2 rounded min-w-1/2 font-bold shadow-2xl ${click ? 'border-2 border-green-500 bg-green-500 text-white' : ''}` }
         onClick={ () => this.check('correct') }
         disabled={ disable }
       >
@@ -163,24 +163,28 @@ class Questions extends React.Component {
   render() {
     const { category, questions, correct, incorrect, timer, click } = this.state;
     return (
-      <section>
-        <h1>Questions</h1>
-        <h2 data-testid="question-category">{category}</h2>
-        <p data-testid="question-text">{questions}</p>
-        <div data-testid="answer-options">
+      <section className='flex flex-col justify-center items-center bg-gray-400 m-4 h-80vh'>
+        <h1 className='text-5xl m-4'>Questions</h1>
+        <h2 className='mt-4' data-testid="question-category">{category}</h2>
+        <p className='w-11/12 text-center mb-4 text-2xl' data-testid="question-text">{questions}</p>
+        <div className='w-11/12 flex flex-col justify-center' data-testid="answer-options">
           {this.random(incorrect, correct)}
         </div>
-        <p>{timer}</p>
+
+        <div className='flex gap-x-4'> 
+        <p className='bg-white rounded px-3 text-5xl mt-4 py-2'>{timer}</p>
         {click ? (
           <button
-            type="button"
-            data-testid="btn-next"
-            onClick={ this.handleClick }
-            className="help"
+          
+          type="button"
+          data-testid="btn-next"
+          onClick={ this.handleClick }
+          className="bg-white rounded px-3 text-5xl mt-4 py-2"
           >
             Next
           </button>
         ) : null}
+        </div>
       </section>
     );
   }
