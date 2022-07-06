@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
+import { motion } from 'framer-motion';
 
 class Feedback extends React.Component {
   state = {
@@ -24,7 +25,11 @@ class Feedback extends React.Component {
     return (
       <div>
         <Header />
-        <div className='min-h-80vh flex flex-col items-center justify-center font-bold text-4xl '>
+        <motion.div
+        initial={{opacity: 0}}
+        animate={{opacity: 1, transition:{delay: 0.5, duration:0.8}}}
+        exit={{opacity:0, transition:{ duration:0.5 }}}
+        className='min-h-80vh flex flex-col items-center justify-center font-bold text-4xl '>
         <p className='text-white' data-testid="feedback-text">
           { phrase }
         </p>
@@ -34,7 +39,7 @@ class Feedback extends React.Component {
         <p className='text-white' data-testid="feedback-total-question">
         Assertions: { assertions }
         </p>
-        </div>
+        </motion.div>
       </div>
     );
   }

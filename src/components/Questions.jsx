@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { attPlacar, actionCorrect } from '../redux/actions';
+import { motion } from 'framer-motion';
 
 class Questions extends React.Component {
   state = {
@@ -86,7 +87,7 @@ class Questions extends React.Component {
   returnButtons = (incorrect, correct) => {
     const { correct: correto, click, disable } = this.state;
     const buttonIncorrect = incorrect.map((alternative, index) => (
-      <button
+      <motion.button
         type="button"
         key={ index }
         name={ alternative }
@@ -96,10 +97,11 @@ class Questions extends React.Component {
         disabled={ disable }
       >
         {alternative}
-      </button>
+      </motion.button>
     ));
     const buttonCorrect = (
-      <button
+      <motion.button
+      
         type="button"
         name={ correto }
         data-testid="correct-answer"
@@ -108,7 +110,7 @@ class Questions extends React.Component {
         disabled={ disable }
       >
         {correct}
-      </button>
+      </motion.button>
     );
     const alternatives = [...buttonIncorrect, buttonCorrect];
     return alternatives;
@@ -163,12 +165,38 @@ class Questions extends React.Component {
   render() {
     const { category, questions, correct, incorrect, timer, click } = this.state;
     return (
-      <section className='flex flex-col justify-start md:mt-14 rounded-2xl items-center  m-4 lg:h-80vh min-h-80vh z-20'>
-        <h1 className='text-5xl m-4 text-white'>Questions</h1>
-        <h2 className='mt-4 text-white text-center' data-testid="question-category">{category}</h2>
-        <p className='w-11/12 text-center mb-4 text-2xl text-white' data-testid="question-text">{questions}</p>
-        <p className='text-white rounded px-3 text-5xl py-2 w-full text-center mb-4'>{timer}</p>
-        <div className='w-11/12 flex flex-col justify-center' data-testid="answer-options">
+      <motion.section
+        initial={{opacity: 0}}
+        animate={{opacity: 1, transition:{ delay: 0.5, duration:0.5}}}
+        exit={{opacity:0, transition:{ duration:0.5 }}}
+        className='flex flex-col justify-start md:mt-14 rounded-2xl items-center  m-4 lg:h-80vh min-h-80vh z-20'>
+        <motion.h1
+          initial={{opacity: 0, x:20}}
+          animate={{opacity: 1, x: 0, transition:{ delay: 0.5, duration:0.5}}}
+          exit={{opacity:0, y:-20, transition:{ duration:0.2 }}}
+          className='text-5xl m-4 text-white'>
+          Questions
+        </motion.h1>
+        <motion.h2
+          initial={{opacity: 0, x:20}}
+          animate={{opacity: 1, x: 0, transition:{ delay: 0.6, duration:0.5}}}
+          exit={{opacity:0, y:-20, transition:{ delay: 0.1, duration:0.2 }}}
+          className='mt-4 text-white text-center' data-testid="question-category">{category}</motion.h2>
+        <motion.p
+          initial={{opacity: 0, x:20}}
+          animate={{opacity: 1, x: 0, transition:{ delay: 0.7, duration:0.5}}}
+          exit={{opacity:0, y:-20, transition:{ delay: 0.2, duration:0.2 }}}
+          className='w-11/12 text-center mb-4 text-2xl text-white' data-testid="question-text">{questions}</motion.p>
+        <motion.p
+          initial={{opacity: 0, x:20}}
+          animate={{opacity: 1, x: 0, transition:{ delay: 0.8, duration:0.5}}}
+          exit={{opacity:0, y:-20, transition:{ delay: 0.3, duration:0.2 }}}
+          className='text-white rounded px-3 text-5xl py-2 w-full text-center mb-4'>{timer}</motion.p>
+        <motion.div
+          initial={{opacity: 0, x:20}}
+          animate={{opacity: 1, x: 0, transition:{ delay: 0.9, duration:0.5}}}
+          exit={{opacity:0, y:-20, transition:{ delay: 0.4, duration:0.2 }}}
+          className='w-11/12 flex flex-col justify-center' data-testid="answer-options">
           <div className="flex flex-col sm:flex-row flex-wrap justify-center w-full">
           {this.random(incorrect, correct)}
           </div>
@@ -183,10 +211,8 @@ class Questions extends React.Component {
             Next
           </button>
         ) : null}
-        </div>
-
-
-      </section>
+        </motion.div>
+      </motion.section>
     );
   }
 }

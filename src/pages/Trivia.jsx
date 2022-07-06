@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Questions from '../components/Questions';
+import { motion } from 'framer-motion' ;
 
 class Trivia extends React.Component {
   render() {
     const { history } = this.props;
     return (
-      <div>
-        {/* <img src={require('../img/purple.jpg')} alt="" className="" /> */}
+      <motion.div
+      initial={{opacity: 1}}
+        animate={{opacity: 1}}
+        exit={{opacity:0, transition:{delay: 1, duration:0.6 }}}
+      >
         <Header />
         Trivia
         <Questions
           history={ history }
         />
-      </div>
+      </motion.div>
     );
   }
 }

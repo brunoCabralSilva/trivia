@@ -3,6 +3,7 @@ import md5 from 'crypto-js/md5';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { actionAddState } from '../redux/actions';
+import { motion } from 'framer-motion';
 
 class Login extends React.Component {
   state = {
@@ -54,11 +55,24 @@ class Login extends React.Component {
     const { name, email, apiDataJson } = this.state;
     console.log(apiDataJson);
     return (
-      <div className="flex flex-col bg-hero-pattern bg-cover bg-center text-white h-screen justify-center items-center">
-        <div className="flex flex-col bg-half-transparent2 rounded-lg gap-1 w-2/3 md:w-1/3 lg:w-1/4">
-          <img className='rounded-lg my-7' src={require('../img/logo.png')} alt="" />
+      <motion.div
+        initial={{opacity: 1}}
+        animate={{opacity: 1}}
+        exit={{opacity:0, transition:{ duration:0.5 }}}
+        className="flex flex-col bg-hero-pattern bg-cover bg-center text-white h-screen justify-center items-center">
+        <motion.div
+        initial={{opacity: 0, y:-20}}
+        animate={{opacity: 1, y: 0, transition:{duration:0.5}}}
+        exit={{opacity:0, y:-20, transition:{ duration:0.5 }}}
+        className="flex flex-col bg-half-transparent2 rounded-lg gap-1 w-2/3 md:w-1/3 lg:w-1/4">
+          <motion.img
+            initial={{opacity: 0, x:20}}
+            animate={{opacity: 1, x: 0, transition:{ delay: 0, duration:0.5}}}
+          className='rounded-lg my-7' src={require('../img/logo.png')} alt="" />
           <div className='w-10/12 mx-auto'> 
-        <input
+        <motion.input
+        initial={{opacity: 0, x:20}}
+        animate={{opacity: 1, x: 0, transition:{ delay: 0.2, duration:0.3}}}
           className=' w-full text-center text-black rounded sm:p-2 p-2 sm:mb-2 mb-2 bg-purple-200'
           type="text"
           name="name"
@@ -66,7 +80,9 @@ class Login extends React.Component {
           data-testid="input-player-name"
           onChange={ this.handleChange }
           />
-        <input
+        <motion.input
+        initial={{opacity: 0, x:20}}
+        animate={{opacity: 1, x: 0, transition:{ delay: 0.4, duration:0.3}}}
           className='w-full text-center text-black rounded sm:p-2 p-2 mb-3 sm:mb-4 bg-purple-200'
           type="email"
           name="email"
@@ -75,7 +91,9 @@ class Login extends React.Component {
           onChange={ this.handleChange }
         />
         <div className='flex flex-row w-full gap-x-2 mb-4'>
-        <button
+        <motion.button
+        initial={{opacity: 0, x:20}}
+        animate={{opacity: 1, x: 0, transition:{ delay: 0.5, duration:0.3}}}
         className="bg-lilas font-bold hover:bg-purple-900 sm:p-2 transition duration-1000 py-2 w-1/2 rounded mb-1"
         type="button"
         onClick={ this.handleClick }
@@ -83,19 +101,21 @@ class Login extends React.Component {
         disabled={ this.enable() }
         >
           Play
-        </button>
-        <button
+        </motion.button>
+        <motion.button
+        initial={{opacity: 0, x:20}}
+        animate={{opacity: 1, x: 0, transition:{ delay: 0.6, duration:0.5}}}
         className="bg-lilas font-bold hover:bg-purple-900 sm:p-2 transition duration-1000 py-2 w-1/2 rounded mb-1"
         type="button"
           data-testid="btn-settings"
           onClick={ this.toSettings }
           >
           Settings
-        </button>
+        </motion.button>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     );
   }
 }
