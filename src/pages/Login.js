@@ -55,11 +55,11 @@ class Login extends React.Component {
     console.log(apiDataJson);
     return (
       <div className="flex flex-col bg-hero-pattern bg-cover bg-center text-white h-screen justify-center items-center">
-        <div className="flex flex-col bg-half-transparent2 rounded-lg gap-1 w-1/2 sm:w-1/4">
+        <div className="flex flex-col bg-half-transparent2 rounded-lg gap-1 w-2/3 md:w-1/3 lg:w-1/4">
           <img className='rounded-lg my-7' src={require('../img/logo.png')} alt="" />
           <div className='w-10/12 mx-auto'> 
         <input
-          className=' w-full text-center rounded p-1 mb-1 bg-purple-200'
+          className=' w-full text-center text-black rounded sm:p-2 p-2 sm:mb-2 mb-2 bg-purple-200'
           type="text"
           name="name"
           value={ name }
@@ -67,16 +67,16 @@ class Login extends React.Component {
           onChange={ this.handleChange }
           />
         <input
-          className='w-full text-center rounded p-1 mb-2 bg-purple-200'
+          className='w-full text-center text-black rounded sm:p-2 p-2 mb-3 sm:mb-4 bg-purple-200'
           type="email"
           name="email"
           value={ email }
           data-testid="input-gravatar-email"
           onChange={ this.handleChange }
         />
-        <div className='flex flex-row w-full gap-x-1 mb-4'>
+        <div className='flex flex-row w-full gap-x-2 mb-4'>
         <button
-        className="bg-lilas font-bold hover:bg-purple-900 transition duration-1000 py-1 w-1/2 rounded mb-1"
+        className="bg-lilas font-bold hover:bg-purple-900 sm:p-2 transition duration-1000 py-2 w-1/2 rounded mb-1"
         type="button"
         onClick={ this.handleClick }
         data-testid="btn-play"
@@ -85,7 +85,7 @@ class Login extends React.Component {
           Play
         </button>
         <button
-        className="bg-lilas font-bold hover:bg-purple-900 transition duration-1000 py-1 w-1/2 rounded mb-1"
+        className="bg-lilas font-bold hover:bg-purple-900 sm:p-2 transition duration-1000 py-2 w-1/2 rounded mb-1"
         type="button"
           data-testid="btn-settings"
           onClick={ this.toSettings }

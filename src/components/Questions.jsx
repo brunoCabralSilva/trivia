@@ -91,7 +91,7 @@ class Questions extends React.Component {
         key={ index }
         name={ alternative }
         data-testid={ `wrong-answer-${index}` }
-        className={ `px-4 py-2 bg-purple-200 m-2 rounded min-w-1/2 font-bold shadow-2xl ${click ? 'border-2 border-red-500 bg-red-500 text-white' : ''}` }
+        className={ `px-4 py-2 bg-purple-200 m-2 rounded sm:w-1/3 font-bold shadow-2xl ${click ? 'border border-red-500 bg-red-500 text-white' : ''}` }
         onClick={ () => this.check('incorrect') }
         disabled={ disable }
       >
@@ -103,7 +103,7 @@ class Questions extends React.Component {
         type="button"
         name={ correto }
         data-testid="correct-answer"
-        className={ `px-4 py-2 bg-purple-200 m-2 rounded min-w-1/2 font-bold shadow-2xl ${click ? 'border-2 border-green-500 bg-green-500 text-white' : ''}` }
+        className={ `px-4 py-2 bg-purple-200 m-2 rounded sm:w-1/3 font-bold shadow-2xl ${click ? 'border border-green-500 bg-green-500 text-white' : ''}` }
         onClick={ () => this.check('correct') }
         disabled={ disable }
       >
@@ -163,20 +163,22 @@ class Questions extends React.Component {
   render() {
     const { category, questions, correct, incorrect, timer, click } = this.state;
     return (
-      <section className='flex flex-col justify-center rounded-2xl items-center  m-4 min-h-80vh z-20'>
+      <section className='flex flex-col justify-start md:mt-14 rounded-2xl items-center  m-4 lg:h-80vh min-h-80vh z-20'>
         <h1 className='text-5xl m-4 text-white'>Questions</h1>
-        <h2 className='mt-4 text-white' data-testid="question-category">{category}</h2>
+        <h2 className='mt-4 text-white text-center' data-testid="question-category">{category}</h2>
         <p className='w-11/12 text-center mb-4 text-2xl text-white' data-testid="question-text">{questions}</p>
         <p className='text-white rounded px-3 text-5xl py-2 w-full text-center mb-4'>{timer}</p>
         <div className='w-11/12 flex flex-col justify-center' data-testid="answer-options">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center w-full">
           {this.random(incorrect, correct)}
+          </div>
         {click ? (
           <button
           
           type="button"
           data-testid="btn-next"
           onClick={ this.handleClick }
-          className="px-4 py-3 bg-test m-2 rounded font-bold shadow-2xl mt-10 text-white border-2 border-white"
+          className="px-4 py-3 bg-test sm:w-2/3 sm:mx-auto m-2 rounded font-bold shadow-2xl mt-10 text-white border-2 border-white"
           >
             Next
           </button>
