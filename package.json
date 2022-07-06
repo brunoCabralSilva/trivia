@@ -18,14 +18,21 @@
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
+<<<<<<< HEAD
   "homepage": "https://brunoCabralSilva.github.io/trybe-19-trivia",
+=======
+  "homepage": "https://brunoCabralSilva.github.io/trybe-10-trivia",
+
+>>>>>>> 023253e284dbd37ade33161ea3980a5e91413615
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
   },
   "eslintConfig": {
     "extends": [
