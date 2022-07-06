@@ -24,15 +24,17 @@ class Feedback extends React.Component {
     return (
       <div>
         <Header />
-        <p data-testid="feedback-text">
+        <div className='min-h-80vh flex flex-col items-center justify-center font-bold text-4xl '>
+        <p className='text-white' data-testid="feedback-text">
           { phrase }
         </p>
-        <p data-testid="feedback-total-score">
-          { score }
+        <p className='text-white my-4' data-testid="feedback-total-score">
+         Score: { score }
         </p>
-        <p data-testid="feedback-total-question">
-          { assertions }
+        <p className='text-white' data-testid="feedback-total-question">
+        Assertions: { assertions }
         </p>
+        </div>
       </div>
     );
   }

@@ -54,8 +54,8 @@ class Login extends React.Component {
     const { name, email, apiDataJson } = this.state;
     console.log(apiDataJson);
     return (
-      <div className="flex flex-col bg-lilas sm:bg-lilas text-white h-screen justify-center items-center">
-        <div className="flex flex-col bg-black rounded-lg gap-1 w-1/2 sm:w-1/4">
+      <div className="flex flex-col bg-hero-pattern bg-cover bg-center text-white h-screen justify-center items-center">
+        <div className="flex flex-col bg-half-transparent2 rounded-lg gap-1 w-1/2 sm:w-1/4">
           <img className='rounded-lg my-7' src={require('../img/logo.png')} alt="" />
           <div className='w-10/12 mx-auto'> 
         <input

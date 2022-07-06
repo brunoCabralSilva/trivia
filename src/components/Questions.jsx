@@ -163,28 +163,27 @@ class Questions extends React.Component {
   render() {
     const { category, questions, correct, incorrect, timer, click } = this.state;
     return (
-      <section className='flex flex-col justify-center items-center bg-half-transparent m-4 min-h-80vh z-20'>
+      <section className='flex flex-col justify-center rounded-2xl items-center  m-4 min-h-80vh z-20'>
         <h1 className='text-5xl m-4 text-white'>Questions</h1>
-        <h2 className='mt-4' data-testid="question-category">{category}</h2>
+        <h2 className='mt-4 text-white' data-testid="question-category">{category}</h2>
         <p className='w-11/12 text-center mb-4 text-2xl text-white' data-testid="question-text">{questions}</p>
+        <p className='text-white rounded px-3 text-5xl py-2 w-full text-center mb-4'>{timer}</p>
         <div className='w-11/12 flex flex-col justify-center' data-testid="answer-options">
           {this.random(incorrect, correct)}
-        </div>
-
-        <div className='flex gap-x-4'> 
-        <p className='bg-white rounded px-3 text-5xl mt-4 py-2'>{timer}</p>
         {click ? (
           <button
           
           type="button"
           data-testid="btn-next"
           onClick={ this.handleClick }
-          className="bg-white rounded px-3 text-5xl mt-4 py-2"
+          className="px-4 py-3 bg-test m-2 rounded font-bold shadow-2xl mt-10 text-white border-2 border-white"
           >
             Next
           </button>
         ) : null}
         </div>
+
+
       </section>
     );
   }
