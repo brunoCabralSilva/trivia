@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/trybe-19-trivia/static/css/main.040607f3.css",
-    "main.js": "/trybe-19-trivia/static/js/main.ef3fc460.js",
+    "main.css": "/trybe-19-trivia/static/css/main.62dd8ffd.css",
+    "main.js": "/trybe-19-trivia/static/js/main.0d6e113b.js",
     "static/media/logo.png": "/trybe-19-trivia/static/media/logo.90e276cb6942b035f550.png",
     "static/media/ok.jpg": "/trybe-19-trivia/static/media/ok.c9c1d263ae1bdecb007f.jpg",
     "static/media/purple.jpg": "/trybe-19-trivia/static/media/purple.103777026c5765234c55.jpg",
     "index.html": "/trybe-19-trivia/index.html",
-    "main.040607f3.css.map": "/trybe-19-trivia/static/css/main.040607f3.css.map",
-    "main.ef3fc460.js.map": "/trybe-19-trivia/static/js/main.ef3fc460.js.map"
+    "main.62dd8ffd.css.map": "/trybe-19-trivia/static/css/main.62dd8ffd.css.map",
+    "main.0d6e113b.js.map": "/trybe-19-trivia/static/js/main.0d6e113b.js.map"
   },
   "entrypoints": [
-    "static/css/main.040607f3.css",
-    "static/js/main.ef3fc460.js"
+    "static/css/main.62dd8ffd.css",
+    "static/js/main.0d6e113b.js"
   ]
 }
