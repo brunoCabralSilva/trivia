@@ -18,7 +18,10 @@
     "redux-thunk": "^2.4.1",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://brunoCabralSilva.github.io/trybe-19-trivia",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -44,6 +47,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.4"
   }
