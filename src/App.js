@@ -18,6 +18,7 @@ export default function App() {
         <Route exact path="/trivia" component={ Game } />
         <Route exact path="/settings" component={ Settings } />
         <Route exact path="/feedback" component={ Feedback } />
+        <Route path="*" component={ Login } />
       </Switch>
       </AnimatePresence>
 

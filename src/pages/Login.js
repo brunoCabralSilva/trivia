@@ -52,8 +52,7 @@ class Login extends React.Component {
   }
 
   render() {
-    const { name, email, apiDataJson } = this.state;
-    console.log(apiDataJson);
+    const { name, email } = this.state;
     return (
       <motion.div
         initial={{opacity: 1}}

@@ -11,7 +11,6 @@ class Feedback extends React.Component {
 
   componentDidMount() {
     const { assertions } = this.props;
-    console.log('assertions', assertions);
     const NUMBER = 3;
     if (Number(assertions) < NUMBER) {
       this.setState({ phrase: 'Could be better...' });
@@ -21,7 +20,6 @@ class Feedback extends React.Component {
   render() {
     const { phrase } = this.state;
     const { score, assertions } = this.props;
-    console.log('assertions render', assertions);
     return (
       <div>
         <Header />

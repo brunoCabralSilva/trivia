@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { attPlacar, actionCorrect } from '../redux/actions';
 import { motion } from 'framer-motion';
+import Temporizador from './Temporizador';
 
 class Questions extends React.Component {
   state = {
@@ -18,25 +19,10 @@ class Questions extends React.Component {
     timer: 30,
     disable: false,
     count: 0,
+    state: '',
   };
 
-  componentDidMount = () => {
-    this.requestAPI();
-    const segundo = 1000;
-    setInterval(() => {
-      const { timer } = this.state;
-      if (timer === 0) {
-        this.setState({
-          timer: 30,
-          disable: true,
-        });
-      } else {
-        this.setState((prevState) => ({ timer: prevState.timer - 1 }));
-      }
-    }, segundo);
-  };
-
-  requestAPI = async () => {
+  componentDidMount = async () => {
     const { token, history } = this.props;
     const url = `https://opentdb.com/api.php?amount=5&token=${token}`;
     const urlAPI = await (await fetch(url)).json();
@@ -55,28 +41,29 @@ class Questions extends React.Component {
         difficulty: urlAPI.results[0].difficulty,
       });
     }
-  };
+  }
 
   check = (alternative) => {
     const { attPoints, addCorrect } = this.props;
-    const { difficulty, timer } = this.state;
+    const { difficulty } = this.state;
+    const tempoExato = 0;
     this.setState({
       click: true,
+      stop: 'stop',
     });
-    const timerExact = timer;
     const dez = 10;
     if (alternative === 'correct') {
       const tres = 3;
       addCorrect(1);
       switch (difficulty) {
       case 'easy':
-        attPoints(dez + timerExact * 1);
+        attPoints(dez + tempoExato * 1);
         break;
       case 'medium':
-        attPoints(dez + timerExact * 2);
+        attPoints(dez + tempoExato * 2);
         break;
       case 'hard':
-        attPoints(dez + timerExact * tres);
+        attPoints(dez + tempoExato * tres);
         break;
       default:
         return null;
@@ -101,7 +88,6 @@ class Questions extends React.Component {
     ));
     const buttonCorrect = (
       <motion.button
-      
         type="button"
         name={ correto }
         data-testid="correct-answer"
@@ -147,6 +133,7 @@ class Questions extends React.Component {
       history.push('/feedback');
     } else {
       this.setState((prevState) => ({
+        stop: 'reset',
         timer: 30,
         click: false,
         disable: false,
@@ -159,11 +146,12 @@ class Questions extends React.Component {
         posicao: prevState.posicao + 1,
         count: prevState.count + 1,
       }));
+      this.setState({ stop: '' });
     }
   };
 
   render() {
-    const { category, questions, correct, incorrect, timer, click } = this.state;
+    const { category, questions, correct, incorrect, click, stop } = this.state;
     return (
       <motion.section
         initial={{opacity: 0}}
@@ -191,7 +179,9 @@ class Questions extends React.Component {
           initial={{opacity: 0, x:20}}
           animate={{opacity: 1, x: 0, transition:{ delay: 0.8, duration:0.5}}}
           exit={{opacity:0, y:-20, transition:{ delay: 0.3, duration:0.2 }}}
-          className='text-white rounded px-3 text-5xl py-2 w-full text-center mb-4'>{timer}</motion.p>
+          className='text-white rounded px-3 text-5xl py-2 w-full text-center mb-4'>
+            <Temporizador click={click} state={ stop } timeExact={this.timeExact} />
+        </motion.p>
         <motion.div
           initial={{opacity: 0, x:20}}
           animate={{opacity: 1, x: 0, transition:{ delay: 0.9, duration:0.5}}}
@@ -202,7 +192,6 @@ class Questions extends React.Component {
           </div>
         {click ? (
           <button
-          
           type="button"
           data-testid="btn-next"
           onClick={ this.handleClick }
