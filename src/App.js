@@ -15,7 +15,7 @@ export default function App() {
         <AnimatePresence>
           <Switch location={ location } key={ location.key }>
             <Route exact path="/" component={ Login } />
-            <Route exact path="/trivia" component={ Game } />
+            <Route exact path="/home" component={ Game } />
             <Route exact path="/settings" component={ Settings } />
             <Route exact path="/feedback" component={ Feedback } />
             <Route path="*" component={ Login } />
