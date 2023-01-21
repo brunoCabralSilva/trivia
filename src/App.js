@@ -13,15 +13,14 @@ export default function App() {
     <div className="">
       <AnimateSharedLayout>
         <AnimatePresence>
-      <Switch location={ location } key={ location.key }>
-        <Route exact path="/trybe-19-trivia" component={ Login } />
-        <Route exact path="/trivia" component={ Game } />
-        <Route exact path="/settings" component={ Settings } />
-        <Route exact path="/feedback" component={ Feedback } />
-        <Route path="*" component={ Login } />
-      </Switch>
-      </AnimatePresence>
-
+          <Switch location={ location } key={ location.key }>
+            <Route exact path="/" component={ Login } />
+            <Route exact path="/trivia" component={ Game } />
+            <Route exact path="/settings" component={ Settings } />
+            <Route exact path="/feedback" component={ Feedback } />
+            <Route path="*" component={ Login } />
+          </Switch>
+        </AnimatePresence>
       </AnimateSharedLayout>
     </div>
   );
