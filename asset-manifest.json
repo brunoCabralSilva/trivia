@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/trybe-19-trivia/static/css/main.884be88f.css",
-    "main.js": "/trybe-19-trivia/static/js/main.f5a7fe6c.js",
-    "static/media/logo.png": "/trybe-19-trivia/static/media/logo.90e276cb6942b035f550.png",
-    "static/media/ok.jpg": "/trybe-19-trivia/static/media/ok.c9c1d263ae1bdecb007f.jpg",
-    "static/media/purple.jpg": "/trybe-19-trivia/static/media/purple.103777026c5765234c55.jpg",
-    "index.html": "/trybe-19-trivia/index.html",
-    "main.884be88f.css.map": "/trybe-19-trivia/static/css/main.884be88f.css.map",
-    "main.f5a7fe6c.js.map": "/trybe-19-trivia/static/js/main.f5a7fe6c.js.map"
+    "main.css": "/trivia/static/css/main.ed63141a.css",
+    "main.js": "/trivia/static/js/main.a1e75a27.js",
+    "static/media/logo.png": "/trivia/static/media/logo.90e276cb6942b035f550.png",
+    "static/media/ok.jpg": "/trivia/static/media/ok.c9c1d263ae1bdecb007f.jpg",
+    "static/media/purple.jpg": "/trivia/static/media/purple.103777026c5765234c55.jpg",
+    "index.html": "/trivia/index.html",
+    "main.ed63141a.css.map": "/trivia/static/css/main.ed63141a.css.map",
+    "main.a1e75a27.js.map": "/trivia/static/js/main.a1e75a27.js.map"
   },
   "entrypoints": [
-    "static/css/main.884be88f.css",
-    "static/js/main.f5a7fe6c.js"
+    "static/css/main.ed63141a.css",
+    "static/js/main.a1e75a27.js"
   ]
 }
