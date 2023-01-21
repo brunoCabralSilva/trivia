@@ -30,7 +30,7 @@ class Login extends React.Component {
       localStorage.removeItem('token');
       history.push('/');
     } else {
-      history.push('/trivia');
+      history.push('/home');
     }
   }
 
